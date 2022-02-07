@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="../css/reset_min.css" rel="stylesheet">
+        <link href="../css/style_homework.css" rel="stylesheet">
+        <title>Homework</title>
+    </head>
+    
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="header_inner">
+                    <a class="header_link" href="../index.html">back</a>
+                </div>
+            </header>
+            
+            <div class="content">
+                <div class="h1">
+                    <h1>Homework</h1>            
+                </div>
+                
+                <!----------HOMEWORK 1----------->
+                
+                <div class="hw">
+                    <div class="frame">
+                        <div class="face"></div>
+                        <div class="ears e1"></div>
+                        <div class="ears e2"></div>
+                        <div class="eyes eye1"></div>
+                        <div class="eyes eye2"></div>
+                        <div class="nose"></div>
+                        <div class="mouth m1"></div>
+                        <div class="mouth m2"></div>
+                        <div class="bow b1"></div>
+                        <div class="bow b2"></div>                 
+                    </div>
+                </div>
+                
+                <!----------HOMEWORK 2----------->
+                
+                <div class="hw">
+                    <div class="gun">
+                        <div class="gun_inner"></div>
+                        <div class="bullet"></div>
+                    </div>
+                </div>
+                
+                <!------------TASK 1------------->
+                <div class="task1">
+                    <form class="form">
+                        <h1 class="title_form">Тип треугольника</h1>
+                        <div class="text_form">Введите значения длин 3 сторон треугольника, для того чтобы определить его тип</div>
+                        <div class="form_item">
+                            <label class="form_label" for="x">Длина 1й стороны </label>
+                            <input class="form_input" id="x" type="number" name="side1" >
+                        </div>
+                        <div class="form_item">
+                            <label class="form_label" for="y">Длина 2й стороны </label>
+                            <input class="form_input" id="y" type="number" name="side2">
+                        </div>
+                        <div class="form_item">
+                            <label class="form_label" for="z">Длина 3й стороны </label>
+                            <input class="form_input" id="z" type="number" name="side3">
+                        </div>
+                    </form>
+                    
+                    <script>
+                        z.oninput = function () {
+                            
+                            var x = parseInt(document.getElementById('x').value);
+                            var y = parseInt(document.getElementById('y').value);
+                            var z = parseInt(document.getElementById('z').value);
+ 
+                            var tr1 = "tr-1.jpg";
+                            var tr2 = "tr-2.jpg";
+                            var tr3 = "tr-3.jpg";
+                            var tr4 = "tr-4.jpg";
+                            
+                            var text1 = "Треугольник существует"
+                            var text2 = "Треугольник равнобедренный"
+                            var text3 = "Треугольник равносторонний"
+                            var text4 = "Треугольник не существует"
+                            
+                            /* проверка что треугольник существует */
+                            if ((x+y)>z && (x+z)>y && (y+z)>x) {
+                                /* проверка что треугольник равнобедренный */
+                                if((x==y)||(y==z)||(z==x)) {
+                                    /* проверка что треугольник равносторонний */
+                                    if((x==y)&&(x==z)&&(y==z)){
+                                        result.innerHTML = text3;
+                                        pic_res.innerHTML = "<img src='../images/task1/" + tr3 + "'>";
+                                    }
+                                    /* не равносторонний но равнобедренный*/
+                                    else {
+                                        result.innerHTML = text2;
+                                        pic_res.innerHTML = "<img src='../images/task1/" + tr2 + "'>";
+                                    }
+                                }
+                                /* не равнобедренный но существует */
+                                else {
+                                    result.innerHTML = text1;
+                                    pic_res.innerHTML = "<img src='../images/task1/" + tr1 + "'>";
+                                }
+                            }
+                            /* не существует */
+                            else {
+                                result.innerHTML = text4;
+                                pic_res.innerHTML = "<img src='../images/task1/" + tr4 + "'>";
+                            }
+                        }   
+                    </script>
+                    <span id="result"></span>
+                    <div id="pic_res" class="picture"></div> 
+                </div>
+                
+                <!------------------TASK MENU------------------>
+                
+                    <div class="task_menu">
+                    <div class="head_block" id="head_box"></div>
+                    <div class="main_block">
+                        <div class="left_block" id="box"></div>
+                        <div class="right_block">
+                            <div class="right_form">
+                                <input class="input_form" id="str" />
+                                <button class="button_form" id="check"><span>Разобрать</span></button>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <script>
+                        
+                        check.onclick = function () 
+                        {
+                            console.error(parseInt("-5px"+ ".7"));
+                            let arr = document.getElementById("str").value.replace(/\s/g, '').split("-");
+                            let strng = [];
+                            let number = [];
+                            let map = new Map();
+                            let countStr = 0;
+                            let countNum = 0;
+
+                            for(let i = 0; i<arr.length;i++)
+                            {
+                                if(isNaN(parseInt(arr[i]))) {
+                                    strng[countStr] = arr[i];
+                                    countStr++;
+                                }
+                                else {
+                                    number[countNum] = arr[i];
+                                    countNum++;
+                                }
+                            }
+                            
+                            strng.sort();
+                            number.sort(( a, b ) =>  a - b);
+
+                            for(let j = 0;j<countStr;j++)
+                            {
+                                map.set("a" + (j+1), strng[j]);
+                            }
+                            for(let k = 0; k < countNum; k++)
+                            {
+                                map.set("n" + (k+1), number[k]);
+                            }
+                           
+                            let left_strHTML = '';
+                            
+                            for(let key of map.keys())
+                            {
+                                left_strHTML+='<button class="arr_item" id="'+key+'" onclick="head_box.innerHTML += this.value;" value="'+map.get(key)+' ">'+key+' '+map.get(key)+'</button>';
+                            }
+                            box.innerHTML = left_strHTML;   
+                        };
+                        
+                        
+                        /*let foo = 4;
+                        switch(foo){
+                            case 3:
+                                console.log('0 bkb 1')
+                                break;
+                            case 4:
+                                console.log(2)
+                                break;
+                            case 5:
+                            case 6:
+                                console.log('3 bkb 4');
+                                break;
+                            default:
+                                console.log('noth')
+                        }*/
+                        
+                        /*if (null == undefined) {
+                            console.log('+')
+                        }
+                                        else{
+                                        console.log('-')
+                                        }*/
+                        
+                        
+                        const newArray = [];
+                        newArray.add(newElement)
+                    </script>
+                        
+                </div>     
+            </div>
+                
+        </div>
+    </body>
+</html>

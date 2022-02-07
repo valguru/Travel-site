@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="../css/reset_min.css" rel="stylesheet"/>-->
+        <title>Elite Travel</title>    
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                
+                <!-------------------------FORM------------------------->
+                <div class="task_menu">
+                    <div class="head_block"></div>
+                    <div class="main_block">
+                        <div class="left_block"></div>
+                        <div class="right_block">
+                            <form class="right_form">
+                                <input class="input_form" id="str" />
+                                <button class="button_form" id="check"><span>Разобрать</span></button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <script>
+                    check.onclick = function () {
+                        let input_str = document.getElementById("str").value;
+                        var arr = input_str.replace(/\s/g, '').split("-");
+                        /*let strng = [];
+                        let number = [];*/
+                        let map = new Map();
+                        let countStr = 0;
+                        let countNum = 0;
+                        arr.sort();
+                        arr.sort((a,b) =>  a - b);
+                        console.log(arr);
+     
+                        for(let i = 0; i<arr.length;i++)
+                        {
+                            if(isNaN(parseInt(arr[i]))) {
+                                /*strng[countStr] = arr[i];*/
+                                countStr++;
+                                map.set("a"+countStr,arr[i])
+                            }
+                            else {
+                                /*number[countNum] = arr[i];*/
+                                countNum++;
+                                map.set("n"+countNum,arr[i])
+                            }
+                        }
+                        
+                        /*map.keys().sort((a,b) => b.key - a.key);*/
+                        /*strng.sort();
+                        number.sort(( a, b ) =>  a - b);
+                        console.log(strng);
+                        console.log(number);
+                        
+                        for(let j = 0;j<countStr;j++)
+                        {
+                            map.set("a"+(j+1),strng[j])
+                        }
+                        for(let k = 0;k<countNum;k++)
+                        {
+                            map.set("n"+(k+1),number[k])
+                        }*/
+                        console.log(map);
+                    };
+                    
+                </script>
+                
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

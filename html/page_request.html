@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="../css/reset_min.css" rel="stylesheet"/>
+        <link href="../css/style_request.css" rel="stylesheet"/>
+        <title>Elite Travel</title>    
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                
+                <!-------------------------FORM------------------------->
+                
+                <div class="form">
+                    <form action="#" id="form" class="form_body">
+                        <h1 class="form_title">Submit your application</h1>
+                        <div class="form_text">Leave your contact details and wishes regarding the organization of the tour. Our operator will contact you shortly.</div>
+                        <div class="form_item">
+                            <label for="formName" class="form_label">Name:</label>
+                            <input id="formName" type="text" name="name" class="form_input">
+                        </div>
+                        <div class="form_item">
+                            <label for="formPhone" class="form_label">Phone number:</label>
+                            <input id="formPhone" type="text" name="phone" class="form_input">
+                        </div>
+                        <div class="form_item">
+                            <label for="formEmail" class="form_label">Email:</label>
+                            <input id="formEmail" type="text" name="email" class="form_input">
+                        </div>
+                        <div class="form_item">
+                            <div class="form_label">What type of tour are you interested in?</div>
+                            <div class="options">
+                                <div class="option_item">
+                                    <input id="formTourMountains" checked type="radio" name="tour" value="mountains" class="options_input">
+                                    <label for="formTourMountains" class="option_label"><span>Mountains</span></label>
+                                </div>
+                                <div class="option_item">
+                                    <input id="formTourWaterfalls" type="radio" name="tour" value="mountains" class="options_input">
+                                    <label for="formTourWaterfalls" class="option_label"><span>Waterfalls</span></label>
+                                </div>
+                                <div class="option_item">
+                                    <input id="formTourCities" type="radio" name="tour" value="mountains" class="options_input">
+                                    <label for="formTourCities" class="option_label"><span>City walks</span></label>
+                                </div>
+                                <div class="option_item">
+                                    <input id="formTourSea" type="radio" name="tour" value="mountains" class="options_input">
+                                    <label for="formTourSea" class="option_label"><span>Sea trips</span></label>
+                                </div>
+                                <div class="option_item">
+                                    <input id="formTourAll" type="radio" name="tour" value="mountains" class="options_input">
+                                    <label for="formTourAll" class="option_label"><span>All of these</span></label>
+                                </div>
+                                <div class="option_item">
+                                    <input id="formTourOther" type="radio" name="tour" value="mountains" class="options_input">
+                                    <label for="formTourOther" class="option_label"><span>Other</span></label>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="form_item">
+                            <lable for="formComment" class="form_label">Comment:</lable>
+                            <textarea id="formComment" name="comment" class="form_input" ></textarea>
+                        </div>
+                        <div class="checkbox">
+                            <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox_input">
+                            <label for="formAgreement" class="checkbox_label">I give my consent to the processing of personal data.</label>
+                        </div>
+                        <button type="submit" class="form_button">SEND</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
